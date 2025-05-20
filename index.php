@@ -104,6 +104,9 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
             </div>
         </section>
         
+    
+    
+</section>
         <section class="categorias-destaque">
     <h2>Explore Nossas Categorias</h2>
     <div class="categorias-grid">
@@ -171,7 +174,35 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
         </div>
     </div>
 </section>
-      
+<section class="destaque-fisico">
+    <div class="container">
+        <h2><i class="fas fa-crown"></i> Livros em Destaque</h2>
+        
+        <div class="livro-container">
+            <!-- IMAGEM COM TAMANHO FIXO -->
+            <div class="livro-capa-container">
+                <img src="assets\images\capas\destaque3.jpg" 
+                     alt="Capa do Livro" 
+                     class="livro-capa-fisica"
+                     style="width:150px; height:225px; object-fit:cover;"> <!-- TAMANHO FIXO AQUI -->
+                <span class="badge-fisico"></span>
+            </div>
+            
+            <div class="livro-info">
+                <h3>MULHER DOS SEUS SONHOS</h3>
+                <p class="autor">Por: ALBERTO BASILIO</p>
+                
+                <div class="detalhes">
+                    <p><i class="fas fa-star"></i> 4.8 (Avaliações)</p>
+                    <p><i class="fas fa-book-open"></i> 122 páginas</p>
+                    <p><i class="fas fa-tag"></i> Gênero Literário</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
         
         <section class="livros-recentes">
             <h2>Livros Recentes</h2>
@@ -187,6 +218,162 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
                 <?php endforeach; ?>
             </div>
         </section>
+        <section class="livros-destaque">
+    <h2>Livros em Destaque</h2>
+    <div class="livros-grid">
+        <?php
+        // Livros em destaque (exemplo)
+        $destaques = [
+            [
+                'titulo' => 'A Arte da Programação',
+                'autor' => 'Carlos Silva',
+                'capa' => 'destaque1.jpg',
+                'link' => 'livro.php?id=1'
+            ],
+            [
+                'titulo' => 'O Segredo das Estrelas',
+                'autor' => 'Ana Oliveira',
+                'capa' => 'destaque2.jpg',
+                'link' => 'livro.php?id=2'
+            ],
+            [
+                'titulo' => 'Viagem ao Centro do Conhecimento',
+                'autor' => 'Miguel Santos',
+                'capa' => 'destaque3.jpg',
+                'link' => 'livro.php?id=3'
+            ],
+            [
+                'titulo' => 'Histórias da Minha Terra',
+                'autor' => 'Beatriz Costa',
+                'capa' => 'destaque4.jpg',
+                'link' => 'livro.php?id=4'
+            ]
+        ];
+        
+        foreach ($destaques as $livro): ?>
+            <div class="livro-card">
+                <a href="<?php echo $livro['link']; ?>">
+                    <img src="assets/images/capas/<?php echo $livro['capa']; ?>" 
+                         alt="<?php echo htmlspecialchars($livro['titulo']); ?>">
+                    <h3><?php echo htmlspecialchars($livro['titulo']); ?></h3>
+                    <p>por <?php echo htmlspecialchars($livro['autor']); ?></p>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+<section class="testimonials-section">
+    <div class="testimonials-header">
+        <h2>Vozes dos Nossos Leitores</h2>
+        <p>Descubra o que estão dizendo sobre essa experiência literária</p>
+    </div>
+    
+    <div class="testimonials-carousel">
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">Esta biblioteca mudou minha forma de ler! A variedade de livros é incrível e a comunidade é acolhedora.</p>
+                <div class="testimonial-author">
+                    <img src="assets\images\USER\OIP.jpeg" alt="Ana Carolina" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Caua de Carolina</h4>
+                        <div class="author-rating">
+                            ★ ★ ★ ★ ★
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">Finalmente encontrei um lugar onde posso compartilhar meus livros favoritos e descobrir novas pérolas literárias.</p>
+                <div class="testimonial-author">
+                    <img src="assets\images\USER\OIP (1).jpeg" alt="Carlos Eduardo" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Machel Arsenio</h4>
+                        <div class="author-rating">
+                            ★ ★ ★ ★ ☆
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="quote-icon">“</div>
+            <div class="testimonial-content">
+                <p class="testimonial-text">Como estudante, essa biblioteca foi uma salvação! Acesso gratuito a tantos títulos acadêmicos e literários.</p>
+                <div class="testimonial-author">
+                    <img src="assets\images\USER\OSK.jpeg" alt="Mariana Santos" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Mario Melembe</h4>
+                        <div class="author-rating">
+                            ★ ★ ★ ★ ★
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="testimonials-cta">
+        <p>Quer compartilhar sua experiência?</p>
+        <a href="#share-testimonial" class="btn btn-outline">Deixe seu depoimento</a>
+    </div>
+</section>
+<section class="estatisticas">
+    <div class="container">
+        <h2>Estatisticas da Biblioteca</h2>
+        <div class="stats-grid">
+            <!-- Livros Cadastrados -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-number" data-count="5000">9</span>
+                    <span class="stat-label">Livros Disponíveis</span>
+                </div>
+            </div>
+            
+            <!-- Usuários Registrados -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-number" data-count="12000">7</span>
+                    <span class="stat-label">Leitores Ativos</span>
+                </div>
+            </div>
+            
+            <!-- Downloads -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-number" data-count="85000">6</span>
+                    <span class="stat-label">Downloads</span>
+                </div>
+            </div>
+            
+            <!-- Categorias -->
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-number" data-count="35">10</span>
+                    <span class="stat-label">Categorias</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     </main>
     <?php include 'includes/footer.php'; ?>
     <div class="help-box">

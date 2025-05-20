@@ -1,3 +1,4 @@
+
 <footer>
     <div class="container">
         <div class="footer-content">
@@ -18,5 +19,30 @@
         </div>
     </div>
 </footer>
+<div class="chat-flutuante" id="chatFlutuante">
+    <div class="chat-cabecalho" id="chatCabecalho">
+        <span>Bate-papo</span>
+        <i class="fas fa-comments"></i>
+    </div>
+    
+    <div class="chat-corpo" id="chatCorpo">
+        <div class="chat-mensagens" id="chatMensagens">
+            <?php if (isLoggedIn()): ?>
+                <div class="chat-carregando">Carregando mensagens...</div>
+            <?php else: ?>
+                <div class="chat-login-required">
+                    <p>Faça <a href="login.php">login</a> para participar</p>
+                </div>
+            <?php endif; ?>
+        </div>
+        
+        <?php if (isLoggedIn()): ?>
+            <div class="chat-input">
+                <textarea id="chatMensagemInput" placeholder="Digite sua mensagem..."></textarea>
+                <button id="chatEnviarBtn" class="btn btn-pequeno btn-azul">Enviar</button>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
 </body>
 </html>

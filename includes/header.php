@@ -30,6 +30,8 @@ $base_path = $is_admin ? '../' : '';
             <ul>
                 <li><a href="<?php echo $base_path; ?>index.php">Início</a></li>
                 <li><a href="<?php echo $base_path; ?>categorias.php">Categorias</a></li>
+               
+    <li><a href="<?php echo $base_path; ?>chat.php">Bate-papo</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="<?php echo $base_path; ?>perfil.php">Perfil</a></li>
                     <?php if ($_SESSION['user_type'] === 'admin'): ?>
@@ -40,7 +42,13 @@ $base_path = $is_admin ? '../' : '';
                     <li><a href="<?php echo $base_path; ?>login.php">Login</a></li>
                     <li><a href="<?php echo $base_path; ?>registro.php">Registrar</a></li>
                 <?php endif; ?>
+                <li><a href="<?php echo $base_path; ?>quem-somos.php">Quem Somos</a></li>
+        <li><a href="<?php echo $base_path; ?>contactos.php">Contactos</a></li>
             </ul>
+            <nav>
+   
+</nav>
         </nav>
     </div>
+    
 </header>

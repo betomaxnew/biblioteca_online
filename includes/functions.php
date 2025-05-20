@@ -90,4 +90,7 @@ function getImagemCategoria($categoria_id) {
     return "assets/images/categorias/default-category.jpg";
 }
 
+
+
+
 ?>
