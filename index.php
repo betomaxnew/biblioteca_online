@@ -269,12 +269,15 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
     </div>
     
     <div class="testimonials-carousel">
+        <!-- Depoimento 1 -->
         <div class="testimonial-card">
             <div class="quote-icon">“</div>
             <div class="testimonial-content">
                 <p class="testimonial-text">Esta biblioteca mudou minha forma de ler! A variedade de livros é incrível e a comunidade é acolhedora.</p>
                 <div class="testimonial-author">
-                    <img src="assets\images\USER\OIP.jpeg" alt="Ana Carolina" class="author-avatar">
+                    <div class="avatar-container">
+                        <img src="assets/images/user/OIP.jpeg" alt="Caua de Carolina" class="author-avatar">
+                    </div>
                     <div class="author-info">
                         <h4>Caua de Carolina</h4>
                         <div class="author-rating">
@@ -285,12 +288,15 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
             </div>
         </div>
 
+        <!-- Depoimento 2 -->
         <div class="testimonial-card">
             <div class="quote-icon">“</div>
             <div class="testimonial-content">
                 <p class="testimonial-text">Finalmente encontrei um lugar onde posso compartilhar meus livros favoritos e descobrir novas pérolas literárias.</p>
                 <div class="testimonial-author">
-                    <img src="assets\images\USER\OIP (1).jpeg" alt="Carlos Eduardo" class="author-avatar">
+                    <div class="avatar-container">
+                        <img src="assets/images/user/OIP (1).jpeg" alt="Machel Arsenio" class="author-avatar">
+                    </div>
                     <div class="author-info">
                         <h4>Machel Arsenio</h4>
                         <div class="author-rating">
@@ -301,12 +307,15 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
             </div>
         </div>
 
+        <!-- Depoimento 3 -->
         <div class="testimonial-card">
             <div class="quote-icon">“</div>
             <div class="testimonial-content">
                 <p class="testimonial-text">Como estudante, essa biblioteca foi uma salvação! Acesso gratuito a tantos títulos acadêmicos e literários.</p>
                 <div class="testimonial-author">
-                    <img src="assets\images\USER\OSK.jpeg" alt="Mariana Santos" class="author-avatar">
+                    <div class="avatar-container">
+                        <img src="assets/images/user/OSK.jpeg" alt="Mario Melembe" class="author-avatar">
+                    </div>
                     <div class="author-info">
                         <h4>Mario Melembe</h4>
                         <div class="author-rating">
@@ -325,7 +334,9 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
 </section>
 <section class="estatisticas">
     <div class="container">
-        <h2>Estatisticas da Biblioteca</h2>
+        <h2>Nossa Biblioteca em Números</h2>
+        <p class="stats-subtitle">Conheça o impacto da nossa comunidade literária</p>
+        
         <div class="stats-grid">
             <!-- Livros Cadastrados -->
             <div class="stat-card">
@@ -333,9 +344,10 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
                     <i class="fas fa-book-open"></i>
                 </div>
                 <div class="stat-content">
-                    <span class="stat-number" data-count="5000">9</span>
+                    <span class="stat-number" data-count="5000">0</span>
                     <span class="stat-label">Livros Disponíveis</span>
                 </div>
+                <div class="stat-wave"></div>
             </div>
             
             <!-- Usuários Registrados -->
@@ -344,9 +356,10 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="stat-content">
-                    <span class="stat-number" data-count="12000">7</span>
+                    <span class="stat-number" data-count="12000">0</span>
                     <span class="stat-label">Leitores Ativos</span>
                 </div>
+                <div class="stat-wave"></div>
             </div>
             
             <!-- Downloads -->
@@ -355,9 +368,10 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
                     <i class="fas fa-download"></i>
                 </div>
                 <div class="stat-content">
-                    <span class="stat-number" data-count="85000">6</span>
-                    <span class="stat-label">Downloads</span>
+                    <span class="stat-number" data-count="85000">0</span>
+                    <span class="stat-label">Downloads Realizados</span>
                 </div>
+                <div class="stat-wave"></div>
             </div>
             
             <!-- Categorias -->
@@ -366,9 +380,10 @@ $categorias = $conn->query("SELECT * FROM categorias LIMIT 6")->fetchAll(PDO::FE
                     <i class="fas fa-tags"></i>
                 </div>
                 <div class="stat-content">
-                    <span class="stat-number" data-count="35">10</span>
-                    <span class="stat-label">Categorias</span>
+                    <span class="stat-number" data-count="35">0</span>
+                    <span class="stat-label">Categorias Diversas</span>
                 </div>
+                <div class="stat-wave"></div>
             </div>
         </div>
     </div>

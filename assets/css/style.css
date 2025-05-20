@@ -1590,6 +1590,232 @@ table tr:hover {
         margin: 0 auto; /* Centraliza em mobile */
     }
 }
+/* Estilos para a seção de depoimentos */
+.testimonials-section {
+    background: #f9f9f9;
+    padding: 4rem 2rem;
+    text-align: center;
+}
 
+.testimonials-header h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.testimonials-header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 3rem;
+}
+
+.testimonials-carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.testimonial-card {
+    min-width: 300px;
+    max-width: 350px;
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    scroll-snap-align: start;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.quote-icon {
+    font-size: 4rem;
+    color: #e74c3c;
+    line-height: 1;
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+}
+
+.avatar-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #e74c3c;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.author-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.author-rating {
+    color: #f1c40f;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.testimonials-cta {
+    margin-top: 3rem;
+}
+
+.testimonials-cta p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Estilos para a seção de estatísticas */
+.estatisticas {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+}
+
+.estatisticas .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.estatisticas h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.stats-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 3rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #e74c3c;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.stat-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+}
+
+/* Animações */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-number {
+    animation: countUp 1s ease-out forwards;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .testimonials-carousel {
+        flex-direction: column;
+        overflow-x: visible;
+        align-items: center;
+    }
+    
+    .testimonial-card {
+        min-width: 80%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 }

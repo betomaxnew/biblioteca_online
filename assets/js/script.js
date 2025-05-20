@@ -276,5 +276,39 @@ document.addEventListener('DOMContentLoaded', function() {
             observer.observe(stat);
         });
     });
+  // Animação de contagem para as estatísticas
+document.addEventListener('DOMContentLoaded', function() {
+    const statNumbers = document.querySelectorAll('.stat-number');
     
+    const options = {
+        threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const count = parseInt(target.getAttribute('data-count'));
+                const duration = 2000; // 2 segundos
+                const step = count / (duration / 16); // 60fps
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= count) {
+                        clearInterval(timer);
+                        current = count;
+                    }
+                    target.textContent = Math.floor(current).toLocaleString();
+                }, 16);
+                
+                observer.unobserve(target);
+            }
+        });
+    }, options);
+    
+    statNumbers.forEach(number => {
+        observer.observe(number);
+    });
+});  
 });
