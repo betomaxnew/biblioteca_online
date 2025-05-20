@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_email'] = $usuario['email'];
                 $_SESSION['user_type'] = $usuario['tipo'];
                 
-                // Obter cartão ativo se existir
                 $cartao = getCartaoAtivo($usuario['id']);
                 if ($cartao) {
                     $_SESSION['cartao_codigo'] = $cartao['codigo'];
@@ -52,34 +51,127 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Biblioteca Online</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --text-color: #2b2d42;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .auth-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .auth-title {
+            color: var(--text-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .auth-subtitle {
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .input-group {
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .auth-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .auth-footer {
+            margin-top: 25px;
+            color: #6c757d;
+        }
+        
+        .auth-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .error {
+            color: #f72585;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
-    
-    <main class="container">
-        <h1>Login</h1>
+    <div class="auth-container">
+        <h1 class="auth-title">Bem-Vindo de volta</h1>
+        <p class="auth-subtitle">Acesse sua conta agora mesmo</p>
         
         <?php if ($erro): ?>
-            <div class="alert alert-danger"><?php echo $erro; ?></div>
+            <div class="error"><?php echo $erro; ?></div>
         <?php endif; ?>
         
-        <form method="POST" action="login.php">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+        <form method="POST" action="login.php" class="auth-form">
+            <div class="input-group">
+                <label>EMAIL</label>
+                <input type="email" name="email" required>
             </div>
             
-            <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
+            <div class="input-group">
+                <label>SENHA</label>
+                <input type="password" name="senha" required>
             </div>
             
-            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button type="submit" class="auth-button">ENTRAR</button>
         </form>
         
-        <p>Não tem uma conta? <a href="registro.php">Registre-se</a></p>
-    </main>
-    
-    <script src="assets/js/script.js"></script>
+        <div class="auth-footer">
+            <p>Não tem uma conta? <a href="registro.php">Crie sua conta</a></p>
+        </div>
+    </div>
 </body>
 </html>
