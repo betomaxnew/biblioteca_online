@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="contact-info">
                 <h2>Informações de Contacto</h2>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> Av. da Leitura, 123 - Cidade dos Livros</li>
-                    <li><i class="fas fa-phone"></i> +351 123 456 789</li>
-                    <li><i class="fas fa-envelope"></i> contacto@bibliotecaonline.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Maputo</li>
+                    <li><i class="fas fa-phone"></i> + 258 84 854 6384</li>
+                    <li><i class="fas fa-envelope"></i> betod.basilio@gmail.com</li>
                 </ul>
                 
                 <div class="social-media">

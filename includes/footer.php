@@ -19,11 +19,7 @@
         </div>
     </div>
 </footer>
-<div class="chat-flutuante" id="chatFlutuante">
-    <div class="chat-cabecalho" id="chatCabecalho">
-        <span>Bate-papo</span>
-        <i class="fas fa-comments"></i>
-    </div>
+
     
     <div class="chat-corpo" id="chatCorpo">
         <div class="chat-mensagens" id="chatMensagens">
